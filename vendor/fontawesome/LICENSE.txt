@@ -1,0 +1,17 @@
+Font Awesome 4.7.0 by @davegandy — http://fontawesome.io
+
+Vendored here so Arrow loads its editor icons locally (zero CDN). GrapesJS
+defaults its `cssIcons` option to a cloudflare-hosted copy of this file; Arrow
+points `cssIcons` at this vendored copy instead.
+
+License (per http://fontawesome.io/license):
+  - Icons (the font, fonts/fontawesome-webfont.woff2): SIL OFL 1.1
+    http://scripts.sil.org/OFL
+  - CSS, LESS, and SASS files (font-awesome.min.css): MIT License
+    https://opensource.org/licenses/mit-license.html
+  - Attribution is no longer required as of Font Awesome 3.0, but is appreciated:
+    "Font Awesome by Dave Gandy - http://fontawesome.io"
+
+The @font-face block in the vendored font-awesome.min.css has been trimmed to
+reference only the local woff2 (the eot/ttf/svg/woff variants were removed to
+avoid 404s); no icon definitions were changed.

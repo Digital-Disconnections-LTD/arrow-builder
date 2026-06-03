@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="discnxt">
+  <title>discnxt</title>
+  <!-- Warm cream square, terracotta D glyph. Theme color-bg faf8f5 / accent c8624a. -->
+  <rect width="64" height="64" rx="12" ry="12" fill="#faf8f5"/>
+  <!-- A stylized D with a notch in the spine: "disconnect from / disc-next". -->
+  <path d="M16 14 H34 a18 18 0 0 1 18 18 v0 a18 18 0 0 1 -18 18 H16 Z"
+        fill="none" stroke="#c8624a" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="13" y="28" width="9" height="8" fill="#faf8f5"/>
+  <rect x="13" y="28" width="9" height="8" fill="none" stroke="#c8624a" stroke-width="3" stroke-linejoin="round"/>
+</svg>

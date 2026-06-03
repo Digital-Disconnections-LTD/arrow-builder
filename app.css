@@ -1,0 +1,104 @@
+/* Arrow builder — editor chrome only. None of this is exported; exported sites
+   get their own clean stylesheet assembled at download time. */
+:root{
+  --ink:#0d1b2a; --ink-2:#16202e; --teal:#0d8a8a; --teal-d:#0b7676;
+  --line:#26384a; --panel:#11202f; --panel-2:#0d1b2a; --muted:#9fb3c8;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0a141f}
+body{display:flex;flex-direction:column;overflow:hidden}
+
+.arrow-topbar{
+  flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:10px 16px;background:var(--panel-2);color:#fff;
+  border-bottom:1px solid var(--line);
+}
+.arrow-brand{display:flex;align-items:center;gap:10px;min-width:0}
+.arrow-logo{color:var(--teal);font-size:18px;line-height:1}
+.arrow-name{font-weight:700;font-size:18px;letter-spacing:.3px}
+.arrow-tag{color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.arrow-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.arrow-saved{color:#6fcf97;font-size:12px;margin-right:4px;transition:opacity .3s}
+.arrow-saved[data-state="saving"]{color:#f2c94c}
+
+.arrow-btn{
+  font:inherit;font-size:13px;font-weight:600;border-radius:6px;cursor:pointer;
+  padding:8px 14px;border:1px solid transparent;line-height:1;
+}
+.arrow-btn--primary{background:var(--teal);color:#fff}
+.arrow-btn--primary:hover{background:var(--teal-d)}
+.arrow-btn--ghost{background:transparent;color:#cde7e7;border-color:var(--line)}
+.arrow-btn--ghost:hover{border-color:var(--teal);color:#fff}
+
+/* Page bar — the multi-page strip. Editor chrome only; not exported. */
+.arrow-pagebar{
+  flex:0 0 auto;display:flex;align-items:center;gap:10px;
+  padding:7px 16px;background:var(--panel);color:var(--muted);
+  border-bottom:1px solid var(--line);overflow-x:auto;
+}
+.arrow-pagebar__label{font-size:11px;text-transform:uppercase;letter-spacing:.7px;flex:0 0 auto}
+.arrow-pages{display:flex;align-items:center;gap:6px;flex:1 1 auto;min-width:0}
+.arrow-page{
+  display:flex;align-items:center;gap:7px;flex:0 0 auto;
+  padding:5px 10px;border-radius:7px;border:1px solid var(--line);
+  background:transparent;color:#cde7e7;font-size:13px;font-weight:600;cursor:pointer;
+  white-space:nowrap;
+}
+.arrow-page:hover{border-color:var(--teal)}
+.arrow-page[aria-selected="true"]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.arrow-page__home{font-size:11px;line-height:1}
+.arrow-page__name{background:none;border:none;color:inherit;font:inherit;cursor:pointer;padding:0}
+.arrow-page__act{
+  background:none;border:none;color:inherit;cursor:pointer;font-size:12px;line-height:1;
+  opacity:.7;padding:0 2px;
+}
+.arrow-page__act:hover{opacity:1}
+.arrow-btn--sm{padding:5px 10px;font-size:12px}
+
+#gjs{flex:1 1 auto;min-height:0;border:none}
+
+/* Make the block panel read like a starter kit for a non-technical owner. */
+.gjs-block{
+  min-height:auto;padding:12px 8px;border-radius:8px;font-size:12px;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+.gjs-block-label{font-weight:600;line-height:1.2}
+.gjs-block__media svg{width:30px;height:30px}
+.gjs-blocks-c{padding:8px}
+.gjs-title{font-weight:700}
+
+/* Modal */
+.arrow-modal{
+  position:fixed;inset:0;background:rgba(6,12,20,.62);display:flex;
+  align-items:center;justify-content:center;padding:20px;z-index:9999;
+}
+.arrow-modal[hidden]{display:none}
+.arrow-modal__card{
+  width:100%;max-width:460px;background:#fff;color:var(--ink-2);
+  border-radius:12px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+.arrow-modal__card h2{margin:0 0 6px;font-size:20px}
+.arrow-modal__hint{margin:0 0 16px;color:#5a6b80;font-size:13px;line-height:1.5}
+.arrow-modal__section{margin:6px 0 12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#0d8a8a;border-top:1px solid #e6edf3;padding-top:14px}
+.arrow-modal__section:first-of-type{border-top:none;padding-top:0}
+.arrow-modal__page{font-weight:600;color:var(--ink-2);text-transform:none;letter-spacing:0}
+.arrow-modal__card select{width:100%;margin-top:5px;padding:9px 11px;border:1px solid #cdd8e3;border-radius:7px;font:inherit;font-size:14px;color:var(--ink-2);background:#fff}
+.arrow-modal__card label{display:block;margin-bottom:14px;font-size:13px;font-weight:600;color:#34465c}
+.arrow-modal__card input,.arrow-modal__card textarea{
+  width:100%;margin-top:5px;padding:9px 11px;border:1px solid #cdd8e3;border-radius:7px;
+  font:inherit;font-size:14px;font-weight:400;color:var(--ink-2);
+}
+.arrow-modal__card input:focus,.arrow-modal__card textarea:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.arrow-modal__actions{display:flex;justify-content:flex-end;gap:8px;margin-top:6px}
+.arrow-modal__actions .arrow-btn--ghost{color:#5a6b80;border-color:#cdd8e3}
+.arrow-modal__actions .arrow-btn--ghost:hover{border-color:var(--teal);color:var(--ink-2)}
+
+/* Toast */
+.arrow-toast{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:#fff;padding:11px 18px;border-radius:8px;font-size:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;z-index:10000;max-width:90vw;
+}
+.arrow-toast--show{opacity:1;transform:translateX(-50%) translateY(0)}
+.arrow-toast--err{background:#8a2b2b}

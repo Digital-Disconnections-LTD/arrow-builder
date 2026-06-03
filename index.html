@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arrow — build your own website · Discnxt</title>
+  <meta name="description" content="Build a one-page website in your browser, free. Drag, drop, and download owned static files you keep forever. No subscriptions, no lock-in. Part of Discnxt.">
+  <meta name="robots" content="noindex"><!-- the builder app itself is a tool, not content; exported sites ARE crawlable -->
+  <link rel="canonical" href="https://discnxt.com/build/">
+  <meta name="theme-color" content="#0d1b2a">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+
+  <!-- Self-hosted editor runtime — zero CDN, zero SaaS. -->
+  <link rel="stylesheet" href="vendor/grapes.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="arrow-topbar">
+    <div class="arrow-brand">
+      <span class="arrow-logo" aria-hidden="true">▲</span>
+      <span class="arrow-name">Arrow</span>
+      <span class="arrow-tag">build your own site — you own the files</span>
+    </div>
+    <div class="arrow-actions">
+      <span id="arrow-saved" class="arrow-saved" title="Your work auto-saves to this browser">saved</span>
+      <button id="arrow-settings-btn" class="arrow-btn arrow-btn--ghost" type="button">Site details</button>
+      <button id="arrow-save-btn" class="arrow-btn arrow-btn--ghost" type="button">Save</button>
+      <button id="arrow-export-btn" class="arrow-btn arrow-btn--primary" type="button">⬇ Download my site</button>
+    </div>
+  </header>
+
+  <!-- Page bar: the pages that make up this site (multi-page) -->
+  <nav class="arrow-pagebar" aria-label="Pages in this site">
+    <span class="arrow-pagebar__label">Pages</span>
+    <div id="arrow-pages" class="arrow-pages" role="tablist"></div>
+    <button id="arrow-addpage-btn" class="arrow-btn arrow-btn--ghost arrow-btn--sm" type="button" title="Add a new page">＋ Add page</button>
+  </nav>
+
+  <div id="gjs"></div>
+
+  <!-- Site details modal (feeds the exported SEO/DD head) -->
+  <div id="arrow-settings" class="arrow-modal" hidden>
+    <div class="arrow-modal__card" role="dialog" aria-modal="true" aria-labelledby="arrow-settings-title">
+      <h2 id="arrow-settings-title">Site details</h2>
+      <p class="arrow-modal__hint">These fill in the parts search engines and social previews read. You can leave them and come back.</p>
+
+      <p class="arrow-modal__section">This page <span id="set-pagename" class="arrow-modal__page"></span></p>
+      <label>Page title
+        <input id="set-title" type="text" maxlength="70" placeholder="Northside Tea Co. — Loose-leaf tea on the Northside">
+      </label>
+      <label>Short description
+        <textarea id="set-desc" rows="2" maxlength="170" placeholder="One or two sentences about this page. Shows up under your name in Google."></textarea>
+      </label>
+
+      <p class="arrow-modal__section">Whole site</p>
+      <label>Your web address (for sharing links &amp; the sitemap)
+        <input id="set-url" type="url" placeholder="https://yourbusiness.com/">
+      </label>
+      <label>Social share image (shows when a link is shared)
+        <select id="set-ogimage"><option value="">Auto — first photo on the page</option></select>
+      </label>
+
+      <div class="arrow-modal__actions">
+        <button id="set-cancel" class="arrow-btn arrow-btn--ghost" type="button">Cancel</button>
+        <button id="set-save" class="arrow-btn arrow-btn--primary" type="button">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Self-hosted libraries (load before app.js) -->
+  <script src="vendor/grapes.min.js"></script>
+  <script src="vendor/grapesjs-plugin-export.js"></script>
+  <script src="vendor/jszip.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
