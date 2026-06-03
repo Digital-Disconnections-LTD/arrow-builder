@@ -195,6 +195,10 @@
     // copy of Font Awesome; we vendor it (vendor/fontawesome/) so the builder
     // is genuinely zero-CDN — it works fully offline, with no third-party calls.
     cssIcons: BASE + 'vendor/fontawesome/font-awesome.min.css',
+    // GrapesJS 0.23 defaults telemetry:true, which POSTs to app.grapesjs.com on
+    // load. We disable it so the builder makes zero third-party calls — genuinely
+    // own-your-site, works fully offline.
+    telemetry: false,
     storageManager: {
       type: 'local', autosave: true, stepsBeforeSave: 1,
       options: { local: { key: STORAGE_KEY } }
