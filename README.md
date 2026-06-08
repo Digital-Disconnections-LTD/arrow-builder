@@ -1,32 +1,45 @@
-# Arrow — the own-your-site website builder
+# Arrow
 
-Build a website in your browser. Download the actual files. Keep them forever.
+> "If it runs on your phone or your computer or your device and nowhere else,
+> you shouldn't have to pay rent to use it."
 
-Arrow is a drag-and-drop website builder that runs entirely in your browser and
-hands you **plain, owned static files** — vanilla HTML and CSS that open and render
-on their own, with no Arrow runtime, no CDN, no server, and no subscription. When
-you're done, you click **Download my site** and you get a `.zip` of your website.
-That's the whole product. The files are yours. We can disappear tomorrow and your
-site still works.
+The website builders charge rent. Arrow does not.
 
-That is the entire point. The drag-and-drop platforms — the ones that rent you a
-page and hold the relationship hostage behind a monthly bill — will not let you walk
-away with what you built. Arrow does the opposite. It's not 1997, and you shouldn't
-have to choose between "easy to build" and "actually yours."
+## The wrong
 
-## What you get
+GoDaddy's Airo. Squarespace. Wix. The builder runs in your browser tab. The
+files live on their servers. Export is paywalled or broken. Stop paying, the
+site disappears — along with everything you built.
 
-- **A real WYSIWYG editor** in the browser, built on [GrapesJS](https://github.com/GrapesJS/grapesjs).
-- **Multi-page sites** — add, rename, delete, and link between pages.
-- **Owned static export** — `Download my site` produces a `.zip` containing:
-  - `index.html` for your home page, `your-page/index.html` for the rest
-  - one shared, minified `css/style.css`
-  - a de-duplicated `assets/` folder (your images, fonts)
-  - `robots.txt` + `sitemap.xml` so search engines can find you
-  - per-page `<title>`, meta description, viewport, and Open Graph tags
-- **No lock-in.** The export depends on nothing of ours. Open `index.html` from the
-  zip in any browser and it just works. Host it anywhere — a $0 static host, a
-  USB stick, your own server.
+## The answer
+
+Arrow is free and open-source. You don't build the site — we build it for you.
+
+Answer a short questionnaire: what the business is, what you do, where you are,
+whether you have a Facebook page or an existing site. Agents research your real
+business footprint and build a site in plain owned HTML and CSS — filled with
+your actual hours, services, and contact information, not placeholder text. When
+the build finishes, the files are yours: a folder with no runtime, no database,
+no scripts, no dependency on us. Tweak the text afterward with a simple editor
+if you want to. Or don't — the site is already real.
+
+That is the only arrangement we are willing to make.
+
+## The offer
+
+Arrow is free. The site we build you is free. The owned export is free.
+
+Hosting is optional: $195 every three years. Your site lives on infrastructure
+we manage — but you have a copy, always, because the exit is part of the deal.
+
+If you do not want our hosting, the files run on GitHub Pages, your own server,
+anywhere. We do not need to be in the picture.
+
+---
+
+Built by agents on [Ollama Cloud](https://ollama.com/cloud). Post-build editing:
+[GrapesJS](https://grapesjs.com/) (BSD-3-Clause).
+Part of [Digital Disconnections](https://digitaldisconnections.com/).
 
 ## Run it
 
